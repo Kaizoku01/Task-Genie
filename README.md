@@ -1,16 +1,20 @@
-# todoey
+# Todoey
 
-A new Flutter project.
+Its an basic to do list App made in Flutter with simple UI and Functionality.
 
-## Getting Started
+## Screens
 
-This project is a starting point for a Flutter application.
+- Home Screen
 
-A few resources to get you started if this is your first Flutter project:
+<img src = "readme_assest/Home_Screen.gif" width = 300 height = 400>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Add Screen Feature
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src = "readme_assest/add_task_Screen.gif" width = 300 height = 400>
+
+
+## Technology Used
+- Flutter
+- Dart
+- Android Studio
+- Git
