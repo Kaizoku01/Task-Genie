@@ -24,7 +24,7 @@ class TasksScreen extends StatelessWidget {
                 padding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom,
                 ),
-                child: AddTaskScreen(),
+                child: const AddTaskScreen(),
               ),
             ),
           );
@@ -41,7 +41,7 @@ class TasksScreen extends StatelessWidget {
                 kHeadText,
                 Text(
                   '${Provider.of<TaskData>(context).taskCount} Task',
-                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                  style: const TextStyle(color: Colors.white, fontSize: 18.0),
                 ),
               ],
             ),
@@ -49,7 +49,7 @@ class TasksScreen extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: kCardDecoration,
-              child: TasksList(),
+              child: const TasksList(),
             ),
           )
         ],

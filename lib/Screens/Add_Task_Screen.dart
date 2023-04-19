@@ -9,11 +9,11 @@ class AddTaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     String? newTaskTitle;
     return Container(
-      padding: EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
+          const Text(
             'Add Task',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 30.0, color: Colors.lightBlueAccent),
@@ -28,7 +28,7 @@ class AddTaskScreen extends StatelessWidget {
           TextButton(
             style:
                 TextButton.styleFrom(backgroundColor: Colors.lightBlueAccent),
-            child: Text(
+            child: const Text(
               'Add',
               style: TextStyle(color: Colors.white),
             ),

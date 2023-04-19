@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:todoey/Modals/tasks.dart';
 
 class TaskData extends ChangeNotifier {
-  List<Task> _tasks = [
+  final List<Task> _tasks = [
     Task(name: 'Task 1'),
     Task(name: 'Task 2'),
     Task(name: 'Task 3'),
