@@ -18,3 +18,4 @@ Its an basic to do list App made in Flutter with simple UI and Functionality.
 - Dart
 - Android Studio
 - Git
+- State managed by Provider
