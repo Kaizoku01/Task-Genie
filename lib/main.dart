@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey/Screens/Task_Screen.dart';
 import 'package:todoey/Modals/task_data.dart';
 
-void main() {
+import 'Modals/task.dart';
+
+void main() async {
+
+  await Hive.initFlutter();
+
+  Hive.registerAdapter(TaskAdapter());
+
   runApp(const MyApp());
 }
 

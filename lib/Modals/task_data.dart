@@ -1,12 +1,12 @@
 import 'dart:collection';
 import 'package:flutter/foundation.dart';
-import 'package:todoey/Modals/tasks.dart';
+import 'package:todoey/Modals/task.dart';
 
 class TaskData extends ChangeNotifier {
   final List<Task> _tasks = [
-    Task(name: 'Task 1'),
-    Task(name: 'Task 2'),
-    Task(name: 'Task 3'),
+    Task(taskBody: 'Task 1'),
+    Task(taskBody: 'Task 2'),
+    Task(taskBody: 'Task 3'),
   ];
 
   UnmodifiableListView<Task> get tasks {
@@ -18,7 +18,7 @@ class TaskData extends ChangeNotifier {
   }
 
   void addTask(String newTaskTitle) {
-    final task = Task(name: newTaskTitle);
+    final task = Task(taskBody: newTaskTitle);
     _tasks.add(task);
     notifyListeners();
   }
