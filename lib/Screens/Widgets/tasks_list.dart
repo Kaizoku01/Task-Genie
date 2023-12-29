@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todoey/Widgets/TasksTile.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey/Modals/task_data.dart';
+import 'tasks_tile.dart';
 
 class TasksList extends StatelessWidget {
   const TasksList({Key? key}) : super(key: key);

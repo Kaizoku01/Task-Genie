@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
-import 'package:todoey/Screens/Task_Screen.dart';
+import 'package:todoey/Screens/task_screen.dart';
 import 'package:todoey/Modals/task_data.dart';
+import 'package:todoey/Services/hive_manager.dart';
 
-import 'Modals/task.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  await Hive.initFlutter();
-
-  Hive.registerAdapter(TaskAdapter());
+  await HiveManager().hiveInitializer();
 
   runApp(const MyApp());
 }
