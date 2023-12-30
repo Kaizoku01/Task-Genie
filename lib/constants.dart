@@ -30,3 +30,13 @@ const kAddCardDecoration = RoundedRectangleBorder(
     topRight: Radius.circular(20.0),
   ),
 );
+
+promptSnackBar({required BuildContext context,required String prompt}){
+  return ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(prompt),
+      backgroundColor: Colors.purple,
+      duration: const Duration(milliseconds: 800),
+    ),
+  );
+}
