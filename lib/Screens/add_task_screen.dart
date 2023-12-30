@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey/Modals/task_data.dart';
-
-import '../constants.dart';
+import 'package:todoey/common/themes/app_color_scheme.dart';
+import 'package:todoey/common/themes/app_text_theme.dart';
 
 class AddTaskScreen extends StatelessWidget {
   const AddTaskScreen({Key? key}) : super(key: key);
@@ -15,10 +15,12 @@ class AddTaskScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text(
-            'Add Task',
+          Text(
+            'Task is...',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 30.0, color: Colors.lightBlueAccent),
+            style: TaskGenieTextTheme.taskGenieTextTheme(
+                    TaskGenieColor.colorPalette4)
+                .titleMedium,
           ),
           TextField(
             autofocus: true,
@@ -26,19 +28,38 @@ class AddTaskScreen extends StatelessWidget {
             onChanged: (newText) {
               newTaskTitle = newText;
             },
-          ),
-          TextButton(
-            style:
-                TextButton.styleFrom(backgroundColor: Colors.lightBlueAccent),
-            child: const Text(
-              'Add',
-              style: TextStyle(color: Colors.white),
+            cursorColor: TaskGenieColor.colorPalette6,
+            cursorHeight: 20,
+            style: TaskGenieTextTheme.taskGenieTextTheme(
+                    TaskGenieColor.colorPalette6)
+                .displayMedium,
+            decoration: InputDecoration(
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: TaskGenieColor.colorPalette6),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: TaskGenieColor.colorPalette6),
+              ),
             ),
-            onPressed: () {
-              Provider.of<TaskData>(context, listen: false)
-                  .addTask(newTaskTitle!, context);
-              Navigator.pop(context);
-            },
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 25.0, left: 70, right: 70),
+            child: TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: TaskGenieColor.colorPalette1,
+              ),
+              child: Text(
+                'Add',
+                style: TaskGenieTextTheme.taskGenieTextTheme(
+                        Colors.white)
+                    .labelMedium,
+              ),
+              onPressed: () {
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(newTaskTitle!, context);
+                Navigator.pop(context);
+              },
+            ),
           ),
         ],
       ),

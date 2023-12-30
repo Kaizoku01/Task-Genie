@@ -29,7 +29,9 @@ class HiveManager {
 
     Hive.registerAdapter(TaskAdapter());
 
-    _myBox = await Hive.openBox(_boxName);
+    _myBox = await Hive.openBox(_boxName,compactionStrategy: (entries, deletedEntries) {
+      return deletedEntries > 50;
+    });
   }
 
   ///[hiveTaskBox] public getter for the private [_myBox] box

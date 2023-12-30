@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/common/themes/app_color_scheme.dart';
+import 'package:todoey/common/themes/app_text_theme.dart';
 
-const kListIcon = CircleAvatar(
+final kListIcon = CircleAvatar(
   child: Icon(
     Icons.list,
     size: 30.0,
-    color: Colors.lightBlueAccent,
+    color: TaskGenieColor.colorPalette6,
   ),
   backgroundColor: Colors.white,
   radius: 30.0,
 );
 
-const kHeadText = Text(
+final kHeadText = Text(
   'TaskGenie',
-  style: TextStyle(
-      color: Colors.white, fontSize: 50.0, fontWeight: FontWeight.w700),
+  style: TaskGenieTextTheme.taskGenieTextTheme(Colors.white).titleLarge,
 );
 
-const kCardDecoration = BoxDecoration(
-  color: Colors.white,
-  borderRadius: BorderRadius.only(
+final kCardDecoration = BoxDecoration(
+  color: TaskGenieColor.colorPalette3,
+  borderRadius: const BorderRadius.only(
     topLeft: Radius.circular(20.0),
     topRight: Radius.circular(20.0),
   ),
@@ -34,9 +35,9 @@ const kAddCardDecoration = RoundedRectangleBorder(
 promptSnackBar({required BuildContext context,required String prompt}){
   return ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Text(prompt),
-      backgroundColor: Colors.purple,
-      duration: const Duration(milliseconds: 800),
+      content: Text(prompt,style: TaskGenieTextTheme.taskGenieTextTheme(Colors.white).labelSmall,),
+      backgroundColor: TaskGenieColor.colorPalette4,
+      duration: const Duration(milliseconds: 1000),
     ),
   );
 }
