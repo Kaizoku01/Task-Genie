@@ -4,7 +4,7 @@ This Flutter application allows you to create tasks to do list with a user-frien
 
 ## Features
 
-- **Task Creation:** Easily create new tasks with titles, descriptions, deadlines, and priority levels.
+- **Task Creation:** Easily create new tasks with description.
 - **Editing and Deletion:** Ability to edit task details or delete tasks when needed.
 - **Offline Access:** Functionality without requiring an internet connection for flexibility and convenience.
 - **Persistent Local Storage:** Efficiently store tasks offline with Hive technology, ensuring secure and speedy local storage for Task Genie.
