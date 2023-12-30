@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todoey/Screens/Task_Screen.dart';
 
 const kListIcon = CircleAvatar(
   child: Icon(
@@ -12,7 +11,7 @@ const kListIcon = CircleAvatar(
 );
 
 const kHeadText = Text(
-  'Todoey',
+  'TaskGenie',
   style: TextStyle(
       color: Colors.white, fontSize: 50.0, fontWeight: FontWeight.w700),
 );
@@ -31,3 +30,13 @@ const kAddCardDecoration = RoundedRectangleBorder(
     topRight: Radius.circular(20.0),
   ),
 );
+
+promptSnackBar({required BuildContext context,required String prompt}){
+  return ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(prompt),
+      backgroundColor: Colors.purple,
+      duration: const Duration(milliseconds: 800),
+    ),
+  );
+}

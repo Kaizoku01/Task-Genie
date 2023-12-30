@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey/Modals/task_data.dart';
 
+import '../constants.dart';
+
 class AddTaskScreen extends StatelessWidget {
   const AddTaskScreen({Key? key}) : super(key: key);
 
@@ -34,7 +36,7 @@ class AddTaskScreen extends StatelessWidget {
             ),
             onPressed: () {
               Provider.of<TaskData>(context, listen: false)
-                  .addTask(newTaskTitle!);
+                  .addTask(newTaskTitle!, context);
               Navigator.pop(context);
             },
           ),
