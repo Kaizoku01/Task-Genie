@@ -14,7 +14,10 @@ class TasksScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.add,color: Colors.white,size: 28,),
+        backgroundColor: Colors.lightBlueAccent,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50.0),),
         onPressed: () {
           showModalBottomSheet(
             isScrollControlled: true,
@@ -50,7 +53,8 @@ class TasksScreen extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: kCardDecoration,
-              child: const TasksList(),
+              width: double.infinity,
+              child: Provider.of<TaskData>(context).taskCount == 0 ? const Center(child: Text('No tasks to display')) : const TasksList(),
             ),
           )
         ],

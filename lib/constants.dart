@@ -11,7 +11,7 @@ const kListIcon = CircleAvatar(
 );
 
 const kHeadText = Text(
-  'Todoey',
+  'TaskGenie',
   style: TextStyle(
       color: Colors.white, fontSize: 50.0, fontWeight: FontWeight.w700),
 );
