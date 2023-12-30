@@ -5,6 +5,8 @@ class HiveManager {
   static HiveManager? _hiveManager;
   late Box _myBox;
 
+  static const String _boxName = 'tasks';
+
   factory HiveManager(){
     _hiveManager ??= HiveManager._();
     return _hiveManager!;
@@ -17,7 +19,7 @@ class HiveManager {
 
     Hive.registerAdapter(TaskAdapter());
 
-    _myBox = await Hive.openBox('tasks');
+    _myBox = await Hive.openBox(_boxName);
   }
 
   Box get hiveTaskBox => _myBox;
