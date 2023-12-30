@@ -23,6 +23,7 @@ class TasksList extends StatelessWidget {
               longPressCallback: () {
                 taskData.deleteTask(task, context);
               },
+              index: index+1,
             );
           },
           itemCount: taskData.taskCount,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoey/Screens/add_task_screen.dart';
+import 'package:todoey/common/themes/app_color_scheme.dart';
 import 'package:todoey/constants.dart';
 import 'package:provider/provider.dart';
 import 'package:todoey/Modals/task_data.dart';
@@ -12,12 +13,16 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add,color: Colors.white,size: 28,),
-        backgroundColor: Colors.lightBlueAccent,
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+          size: 28,
+        ),
+        backgroundColor: TaskGenieColor.colorPalette1,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50.0),),
+          borderRadius: BorderRadius.circular(50.0),
+        ),
         onPressed: () {
           showModalBottomSheet(
             isScrollControlled: true,
@@ -31,6 +36,7 @@ class TasksScreen extends StatelessWidget {
                 child: const AddTaskScreen(),
               ),
             ),
+            backgroundColor: TaskGenieColor.colorPalette3,
           );
         },
       ),
@@ -54,9 +60,12 @@ class TasksScreen extends StatelessWidget {
             child: Container(
               decoration: kCardDecoration,
               width: double.infinity,
-              child: Provider.of<TaskData>(context).taskCount == 0 ? const Center(child: Text('No tasks to display')) : const TasksList(),
+              child: Provider.of<TaskData>(context).taskCount == 0
+                  ? const Center(child: Text('No tasks to display'))
+                  : const TasksList(),
             ),
-          )
+          ),
+          const Text('hold the task to delete',style: TextStyle(color: Colors.white),),
         ],
       ),
     );
