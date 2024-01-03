@@ -20,6 +20,7 @@ This Flutter application allows you to create tasks to do list with a user-frien
 
 - Upon launching the app, it will automatically look for any tasks stored locally and display it according to the added sequence.
 - You can create, delete and complete the task.
+- [Play Store](https://play.google.com/store/apps/details?id=com.kaizokuapps.taskgenie)
 
 ## Screenshots
 
